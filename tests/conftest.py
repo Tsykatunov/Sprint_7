@@ -1,65 +1,44 @@
 import pytest
 
-@pytest.fixture
-def base_url():
-    return "https://qa-scooter.praktikum-services.ru/"
+base_url = "https://qa-scooter.praktikum-services.ru"
 
 #Данные для тестов регистрации курьера:
-@pytest.fixture
-def valid_courier_data_for_register():
-    return {
+valid_courier_data_for_register = {
         "login": "Anakin",
         "password": "DarthVader",
         "firstName": "Any"
     }
 
-@pytest.fixture
-def duplicate_courier_data(valid_courier_data_for_register):
-    return valid_courier_data_for_register
-
-@pytest.fixture
-def missing_login_field_courier_data():
-    return {
+missing_login_field_courier_data = {
         "login": "",
         "password": "DarthVader",
         "firstName": "Any"
     }
 
-@pytest.fixture
-def missing_password_field_courier_data():
-    return {
+missing_password_field_courier_data = {
         "login": "Anakin",
         "password": "",
         "firstName": "Any"
     }
 
 #Данные для тестов логина курьера:
-
-@pytest.fixture
-def valid_login_courier_data():
-    return {
+valid_login_courier_data= {
         "login": "Anakin",
         "password": "DarthVader"
     }
 
-@pytest.fixture
-def login_invalid_courier_data_login():
-    return {
+login_invalid_courier_data_login = {
         "login": "Anakine",
         "password": "DarthVader"
     }
 
-@pytest.fixture
-def login_invalid_courier_data_password():
-    return {
+login_invalid_courier_data_password = {
         "login": "Anakin",
         "password": "DarthBane"
     }
 
 #Данные для создания заказа:
-@pytest.fixture
-def order_data():
-    return {
+order_data = {
         "firstName": "Sheev",
         "lastName": "Palpatine",
         "address": "Galactic Senate",
