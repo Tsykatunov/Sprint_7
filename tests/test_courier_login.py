@@ -1,5 +1,6 @@
 import requests
-from conftest import base_url, CourierCreate
+from conftest import base_url
+from helpers import CourierCreate
 
 class TestCourierLogin:
     def test_courier_login(self):
